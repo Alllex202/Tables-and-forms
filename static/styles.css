@@ -1,0 +1,271 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: #F2F2F2;
+}
+
+main {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 30px;
+    background: white;
+    min-height: calc(100vh - 60px);
+    border-radius: 20px;
+}
+
+h1 {
+    font-weight: 300;
+    margin-top: 0;
+    font-size: 50px;
+    text-align: center;
+    color: rgba(173,38,164,0.67);
+}
+
+.error {
+    color: rgba(173,30,24,0.88);
+}
+
+.orders {
+    margin: 20px 0;
+}
+
+.form {
+    width: 600px;
+
+    margin: 50px auto;
+    padding: 20px;
+
+    border: solid 1px rgba(173,38,164,0.67);
+    border-radius: 10px;
+}
+
+.form__input {
+    width: 100%;
+    height: 35px;
+
+    padding: 5px 10px;
+
+    line-height: 20px;
+
+    border: solid 1px rgba(173, 38, 164, 0.28);
+    border-radius: 5px;
+    outline: none;
+
+    transition: all .3s;
+}
+
+.form__input:focus {
+    /*background-color: rgba(173, 38, 164, 0.04);*/
+    border-color: rgba(173, 38, 164, 0.56);
+}
+
+.form__input:invalid {
+    background-color: rgba(173, 38, 38, 0.04);
+}
+
+.form__input:valid {
+    background-color: rgba(78, 173, 38, 0.04);
+}
+
+.form__select {
+    width: 100%;
+    height: 35px;
+
+    padding: 5px 10px;
+
+    line-height: 20px;
+
+    border: solid 1px rgba(173, 38, 164, 0.28);
+    border-radius: 5px;
+    outline: none;
+
+    transition: all .3s;
+}
+
+.form__select:focus {
+    /*background-color: rgba(173, 38, 164, 0.04);*/
+    border-color: rgba(173, 38, 164, 0.56);
+}
+
+.form__checkbox {
+    width: 0;
+    height: 0;
+
+    margin-left: 5px;
+
+    position: relative;
+}
+.form__checkbox:before {
+    content: '';
+    display: block;
+
+    width: 13px;
+    height: 13px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    transform: translateY(-50%);
+
+    background-color: #fff;
+
+    border-radius: 50%;
+    border: solid 1px rgba(173, 38, 164, 0.28);
+
+    transition: background-color .3s;
+}
+
+.form__checkbox:checked:before {
+    background-color: #fbc0ff;
+}
+
+.form__questions {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 20px;
+}
+
+.form__question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 15px;
+}
+
+.question__text {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    width: 50%;
+}
+
+.question__answer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    width: 50%;
+
+}
+
+.question__variables {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    width: 100%;
+}
+
+.question__variables .variable {
+    display: flex;
+    align-items: center;
+}
+
+.question--gender {
+
+}
+
+.question--eye-color .form__input {
+    height: 40px;
+    padding: 1px;
+}
+
+.question--rules {
+    justify-content: center;
+}
+
+.question--rules .form__checkbox {
+    position: absolute;
+    width: 0;
+    height: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.question--rules span {
+    color: rgba(128, 128, 128, 0.71);
+    font-size: 13px;
+}
+
+.question--rules a {
+    color: rgba(128, 128, 128, 0.71);
+    outline: none;
+    transition: color .3s;
+}
+
+.question--rules a:focus,
+.question--rules a:hover {
+    color: rgba(128, 128, 128, 0.91);
+}
+
+.form__actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.form__actions button {
+    cursor: pointer;
+
+    transition: all .3s;
+}
+
+.form__actions button:disabled {
+    cursor: not-allowed;
+}
+
+#submit {
+    width: 300px;
+    height: 30px;
+
+    background-color: rgba(161, 252, 69, 0.12);
+    font-size: 20px;
+    /*margin-left: 50%;*/
+    /*transform: translateX(-50%);*/
+
+    border: none;
+    border-radius: 5px;
+    outline: none;
+}
+
+#submit:focus,
+#submit:hover {
+    background-color: rgba(161, 252, 69, 0.24);
+}
+
+#submit:disabled {
+    background-color: rgba(212, 69, 252, 0.04);
+}
+
+#reset {
+    height: 20px;
+
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    padding: 0 5px;
+
+    background-color: rgba(132, 132, 132, 0.12);
+    opacity: .3;
+
+    border: none;
+    border-radius: 5px;
+    outline: none;
+}
+
+#reset:focus,
+#reset:hover {
+    opacity: .7;
+}

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Форма выбора питомца</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+</head>
+<body>
+<main>
+    <h1>Найди себе друга!</h1>
+
+    <div class="form">
+        <form action="/pets/orders" method="post">
+            <div class="form__questions">
+                <div class="form__question question--name">
+                    <div class="question__text">
+                        <label for="name">
+                            Имя (на русском языке)
+                        </label>
+                    </div>
+                    <div class="question__answer">
+                        <input class="form__input name" type="text" id="name" name="name" placeholder="Имя"
+                               minlength="3" maxlength="50" autocomplete="off" required>
+                    </div>
+                </div>
+                <div class="form__question question--gender">
+                    <div class="question__text">
+                        <label>Пол</label>
+                    </div>
+                    <div class="question__answer">
+                        <div class="question__variables">
+                            <div class="variable">
+                                <label for="gender-1">
+                                    Мужской
+                                </label>
+                                <input class="form__checkbox" type="radio" id="gender-1" name="gender" value="boy" checked required>
+                            </div>
+                            <div class="variable">
+                                <label for="gender-2">
+                                    Женский
+                                </label>
+                                <input class="form__checkbox" type="radio" id="gender-2" name="gender" value="girl" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form__question question--pet-type">
+                    <div class="question__text">
+                        <label for="petType">
+                            Животное
+                        </label>
+                    </div>
+                    <div class="question__answer">
+                        <select class="form__select" id="petType" name="petType" required>
+                            <option value="cat">Кот</option>
+                            <option value="dog">Собака</option>
+                            <option value="tiger">Тигр</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form__question question--eye-color">
+                    <div class="question__text">
+                        <label for="eyeColor">
+                            Цвет глаз
+                        </label>
+                    </div>
+                    <div class="question__answer">
+                        <input class="form__input" type="color" id="eyeColor" name="eyeColor" required>
+                    </div>
+                </div>
+                <div class="form__question question--tail-length">
+                    <div class="question__text">
+                        <label for="tailLength">
+                            Длина хвоста (см)
+                        </label>
+                    </div>
+                    <div class="question__answer">
+                        <input class="form__input" type="number" id="tailLength" name="tailLength" min="7" max="120"
+                               value="7" step="1"
+                               required>
+                    </div>
+                </div>
+                <div class="form__question question--date-of-birth">
+                    <div class="question__text">
+                        <label for="dateOfBirth">
+                            День рождения
+                        </label>
+                    </div>
+                    <div class="question__answer">
+                        <input class="form__input" type="date" id="dateOfBirth" name="dateOfBirth" required>
+                    </div>
+                </div>
+                <div class="form__question question--email">
+                    <div class="question__text">
+                        <label for="email">
+                            Email
+                        </label>
+                    </div>
+                    <div class="question__answer">
+                        <input class="form__input" type="email" id="email" name="email" placeholder="Email"
+                               autocomplete="off" required>
+                    </div>
+                </div>
+                <div class="form__question question--phone">
+                    <div class="question__text">
+                        <label for="phone">
+                            Телефон
+                        </label>
+                    </div>
+                    <div class="question__answer">
+                        <input class="form__input" type="tel" id="phone" name="phone" placeholder="Телефон"
+                               autocomplete="off" required>
+                    </div>
+                </div>
+                <div class="form__question question--rules">
+                    <span>Отправляя данную форму, вы соглашаетесь со всеми <a href="#" title="Какие-то правила">правилами</a>.</span>
+                    <input class="form__checkbox" type="checkbox" id="rules" name="rules" value="true" tabindex="-1"
+                           checked required>
+                </div>
+            </div>
+            <div class="form__actions">
+                <button id="submit" type="submit" class="form__submit" disabled>Найти</button>
+                <button id="reset" type="reset" class="form__reset">Очистить</button>
+            </div>
+        </form>
+    </div>
+
+</main>
+</body>
+</html>
