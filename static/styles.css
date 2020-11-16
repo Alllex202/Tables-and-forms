@@ -40,9 +40,63 @@ h1 {
     color: rgba(173,30,24,0.88);
 }
 
+/*---Table---*/
+
 .orders {
-    margin: 20px 0;
+    position: relative;
+
+    margin: 20px auto;
+    padding: 10px;
+
+    border: solid 2px rgba(173,38,164,0.67);
+    border-collapse: collapse;
+    border-radius: 8px;
 }
+
+.orders .block-color {
+    display: block;
+    width: 90%;
+    height: 15px;
+    margin: auto;
+}
+
+.orders td,
+.orders th {
+    padding: 10px;
+    text-align: center;
+}
+
+.orders tr:first-child {
+    background-color: rgba(173, 38, 164, 0.29);
+}
+
+.orders tr:nth-child(2n + 3) {
+    background-color: rgba(173, 38, 164, 0.11);
+}
+
+.orders tr:last-child {
+    position: relative;
+    background-color: rgba(63, 173, 38, 0.22);
+}
+
+.orders tr:last-child td:first-child::before {
+    content: 'NEW!';
+    display: inline-block;
+    position: absolute;
+    bottom: 24px;
+    left: -30px;
+    border: 1px solid red;
+    border-radius: 24px;
+    padding: 3px 5px;
+    height: 17px;
+    line-height: 19px;
+    text-align: center;
+    background-color: whitesmoke;
+    color: red;
+    font-weight: 800;
+}
+
+/*---Form---*/
 
 .form {
     width: 600px;
