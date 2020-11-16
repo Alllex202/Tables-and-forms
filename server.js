@@ -55,7 +55,7 @@ app.post('/pets/orders', (request, response) => {
     });
 
     // Правка тела
-    let tableBody = `<tr>${arr[arr.length - 1]
+    const tableBody = `<tr>${arr[arr.length - 1]
         .split(/<tr>|<\/tr>|<\/table>/)
         .filter(e => e)
         .map(el => el.split(/<td>|<\/td>/).filter(e => e))
