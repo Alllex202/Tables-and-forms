@@ -13,7 +13,7 @@ const pageHead =
 <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-<main>
+<main class="unselectable">
 <h1>Результат заказа питомца</h1>
 `;
 
@@ -67,7 +67,7 @@ app.post('/pets/orders', (request, response) => {
                 } else if (ind === 1) {
                     el = el === 'girl' && 'Ж'
                         || el === 'boy' && 'М'
-                        || '?';
+                        || 'Любой';
                 } else if (ind === 2) {
                     el = /^#[0-9a-f]{6}$/i.test(el) && `<div class="block-color" style="background-color: ${el}"><div>`;
                 } else if (ind === 3) {
@@ -76,8 +76,8 @@ app.post('/pets/orders', (request, response) => {
                     //
                 } else if (ind === 5) {
                     el = /^[0-9]{4}-[0-9]{2}-[0-9]{2}$/.test(el) && el.split('-').reverse().join('-');
-                    // } else if (ind === 6) {
-                    //
+                } else if (ind === 6) {
+                    el = /^.+@.+\..+$/igm.test(el) && `<a href="mailto:${el}">${el}</a>`;
                     // } else if (ind === 7) {
                     //
                 }
@@ -90,7 +90,7 @@ app.post('/pets/orders', (request, response) => {
     arr.push(tableBody)
     pageBody = arr.join('');
 
-    // console.log(pageBody)
+    // console.log(tableBody)
 
     response.send(`${pageHead}${pageBody}${pageFoot}`);
 });
