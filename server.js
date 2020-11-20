@@ -1,5 +1,3 @@
-// import {Table} from "./addOrder";
-
 const express = require('express');
 const app = express();
 const port = 3000;
@@ -47,6 +45,7 @@ app.post('/pets/orders', (request, response) => {
     const reqBody = request.body;
     let pageBody = constructPageBody(reqBody);
 
+    // Мне было лень писать проверки для получаемых данных
     if (/<table>|<\/table>/.test(pageBody)) {
         table.addOrder(reqBody);
         pageBody = `<h3>Ваш заказ добавлен!</h3>${table.get()}`;

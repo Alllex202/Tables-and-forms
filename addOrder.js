@@ -1,7 +1,4 @@
 module.exports = class Table {
-    // let _head = '';
-    // let _body = '';
-
     constructor(titles) {
         this.head = '';
         this.body = '';
