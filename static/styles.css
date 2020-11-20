@@ -79,20 +79,25 @@ h1 {
     text-align: center;
 }
 
-.orders tr:first-child {
-    background-color: rgba(173, 38, 164, 0.29);
+.orders thead tr th {
+    position: sticky;
+    top: -2px;
+    background-color: rgb(231 192 229);;
 }
 
-.orders tr:nth-child(2n + 3) {
+.orders tbody tr:nth-child(2n + 2) td {
     background-color: rgba(173, 38, 164, 0.11);
 }
 
-.orders tr:last-child {
+.orders tbody tr:last-child {
     position: relative;
+}
+
+.orders tbody tr:last-child td {
     background-color: rgba(63, 173, 38, 0.22);
 }
 
-.orders tr:last-child td:first-child::before {
+.orders tbody tr:last-child td:first-child::before {
     content: 'NEW!';
 
     display: inline-block;
