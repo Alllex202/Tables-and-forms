@@ -106,7 +106,7 @@ app.post('/pets/orders', (request, response) => {
     // console.log(reqBody)
     // console.log(++table);
 
-    console.log([table, pageBody])
+    // console.log([table, pageBody])
 
     response.send(`${pageHead}${pageBody}${pageFoot}`);
 });
